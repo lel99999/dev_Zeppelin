@@ -27,6 +27,35 @@ z.addRepo("RepoName").url("RepoURL").username("username").password("password")
 
 #### Hive Connection
 - Default Connection 
+  # SCALA <br/>
+  ```
+  import java.sql.Connection;
+  import java.sql.Statement;
+  import java.sql.DriverManager;
+
+  object HiveJDBCConnect extends App{
+  	var con = null;
+	try {
+		val conStr = "jdbc:hive2://192.168.1.100:10000/default";
+		Class.forName("org.apache.hive.jdbc.HiveDriver");
+		con = DriverManager.getConnection(conStr, "", "");
+		val stmt = con.createStatement();
+		stmt.executeQuery("Show databases");
+		System.out.println("show database successfully");
+	} catch (Exception ex) {
+		ex.printStackTrace();
+	} finally {
+		try {
+			if (con != null)
+				con.close();
+		} catch (Exception ex) {
+		}
+	}
+  }
+
+  ```
+  
+  # JAVA <br/>
   ```
   import java.sql.Connection;
   import java.sql.Statement;
@@ -36,7 +65,7 @@ z.addRepo("RepoName").url("RepoURL").username("username").password("password")
 	public static void main(String[] args) {
 		Connection con = null;
 		  try {
-			  String conStr = "jdbc:hive2://192.168.1.148:10000/default";
+			  String conStr = "jdbc:hive2://192.168.1.100:10000/default";
 			  Class.forName("org.apache.hive.jdbc.HiveDriver");
 			  con = DriverManager.getConnection(conStr, "", "");
 			  Statement stmt = con.createStatement();
