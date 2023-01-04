@@ -158,16 +158,17 @@ z.addRepo("RepoName").url("RepoURL").username("username").password("password")
     IRkernel::installspec()  # to register the kernel in the current R installation
     ```
 #### System Errors
-- 'abrt-cli status' timed out
+- 'abrt-cli status' timed out <br/>
    Fix: <br/>
-   ```
-   ## Check status of abrtd service
-   $systemctl status abrtd
+   - ## Check status of abrtd service
+     `$sudo systemctl status abrtd` <br/>
+     ![https://github.com/lel99999/dev_Zeppelin/blob/main/abrtd_status-01.PNG](https://github.com/lel99999/dev_Zeppelin/blob/main/abrtd_status-01.PNG) <br/>
+     
+   - ## Stop the abrt service
+     `$sudo systemctl stop  abrtd` <br/>
+   - ## Kill Process holding Lock file <br/>
+     `$sudo pkill -9 systemctl stop abrtd` <br/>
+   - ## Start the service again, lock file should be gone
+     `$sudo systemctl start abrtd` <br/> 
    
    
-   
-   ## Stop the abrt service
-   $sudo systemctl stop  abrtd
-   
-   
-   ```
