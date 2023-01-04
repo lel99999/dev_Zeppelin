@@ -149,3 +149,11 @@ z.addRepo("RepoName").url("RepoURL").username("username").password("password")
   plt.plot([1, 2, 3])  
   ```
   
+  #### Adding Jupyter R Kernel
+  - Install R
+  
+  - Install IRKernel in R
+    ```
+    >install.packages('IRkernel')
+    IRkernel::installspec()  # to register the kernel in the current R installation
+    ```
