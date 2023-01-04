@@ -126,3 +126,26 @@ z.addRepo("RepoName").url("RepoURL").username("username").password("password")
   spark.sql("select col_A, col_B from parquet.`hdfs://my_hdfs_path/my_db.db/my_table`")
    .show()
   ```
+
+#### Adding Jupyter Interpreter
+- Installing Pre-requisites
+  ```
+  $pip install jupyter-client
+  $pip install grpcio
+  $pip install protobuf
+  ```
+  
+- Install Jupyter Python Kernel
+  ```
+  $pip install ipykernel
+  ```
+  
+  Run Python code in Jupyter interpreter <br/>
+  ```
+  %jupyter(kernel=python)
+
+  %matplotlib inline
+  import matplotlib.pyplot as plt
+  plt.plot([1, 2, 3])  
+  ```
+  
