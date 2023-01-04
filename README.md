@@ -157,3 +157,17 @@ z.addRepo("RepoName").url("RepoURL").username("username").password("password")
     >install.packages('IRkernel')
     IRkernel::installspec()  # to register the kernel in the current R installation
     ```
+#### System Errors
+- 'abrt-cli status' timed out
+   Fix: <br/>
+   ```
+   ## Check status of abrtd service
+   $systemctl status abrtd
+   
+   
+   
+   ## Stop the abrt service
+   $sudo systemctl stop  abrtd
+   
+   
+   ```
