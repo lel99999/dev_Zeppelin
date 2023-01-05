@@ -134,10 +134,24 @@ z.addRepo("RepoName").url("RepoURL").username("username").password("password")
   $pip install grpcio
   $pip install protobuf
   ```
+  - Error installing grpcio: <br/>
+    ![https://github.com/lel99999/dev_Zeppelin/blob/main/pip3_grpcio_error-01.PNG](https://github.com/lel99999/dev_Zeppelin/blob/main/pip3_grpcio_error-01.PNG) <br/>
+    Fix: <br/>
+    ```
+    # Updgrade pip
+    $pip3 install --upgrade pip
+    
+    # Upgrade setuptools
+    $python3 -m pip install --upgrade setuptools
+    
+    # Install grpcio using command:
+    $pip3 install --no-cache-dir  --force-reinstall -Iv grpcio==<version_number>  (grpcio==1.36.1)
+    ```
+  
   
 - Install Jupyter Python Kernel
   ```
-  $pip install ipykernel
+  $pip3 install ipykernel
   ```
   
   Run Python code in Jupyter interpreter <br/>
