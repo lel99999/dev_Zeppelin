@@ -3,6 +3,12 @@ Zeppelin Spark Notes and Workspace
 
 #### Sharing Notebooks
 
+#### Ports
+- Hive2
+  - 10000
+  
+- SparkUI
+  - 4000:4010
 
 #### Load External Dependencies/Jars
 ```
